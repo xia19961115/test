@@ -6,7 +6,8 @@
       <router-link to="/my">my</router-link> |
       <router-link to="/file">File</router-link> |
       <router-link to="/echart">Echart</router-link> |
-      <router-link to="/test">Test</router-link>
+      <router-link to="/test">Test</router-link> |
+      <router-link to="/news">News</router-link>
       <!-- <div class="navigation">
         <div class="navigation-title">中央后台系统</div>
         <div class="navigation-item">

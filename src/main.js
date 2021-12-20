@@ -9,6 +9,8 @@ Vue.use(echarts)
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
+const Bus = new Vue()
+Vue.prototype.$bus =Bus
 Vue.component('Edit',()=>import('./components/Edit.vue'))
 
 new Vue({

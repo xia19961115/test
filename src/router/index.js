@@ -40,6 +40,11 @@ const routes = [
     path: '/echart',
     name: 'Echart',
     component: () => import(/* webpackChunkName: "about" */ '../views/Echart.vue') 
+  },
+  {    
+    path: '/news',
+    name: 'News',
+    component: () => import(/* webpackChunkName: "about" */ '../views/News.vue') 
   }
 ]
 
