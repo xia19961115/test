@@ -38,6 +38,8 @@
   </div>
 </template>
 <script>
+import MyRoute from '../src/router/routes'
+console.log('route',MyRoute)
 export default {
   name: "Navigation",
   data() {
@@ -174,8 +176,18 @@ export default {
       ],
     };
   },
-  created() {
-    console.log(this.$route.name);
+  mounted() {
+    const arr = ['1','4','5']
+    const newRoute = MyRoute.filter(item => arr.indexOf(item.meta.id) > -1 )
+    console.log('newRoute', newRoute);
+    // console.log(MyRoute);
+    // console.log(this.$route.name);
+    // console.log(this.$router);
+    this.$router.addRoutes(...MyRoute)
+    // newRoute.forEach(item => {
+    //   this.$router.addRoute(item)
+    // })
+    // console.log(this.$router)
   },
   methods: {
     handleSumbitIcon(item) {

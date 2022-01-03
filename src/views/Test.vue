@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div>123211232</div>
         <Model v-model="name" @change='handle' @click="handle1"/>
     </div>
 </template>
