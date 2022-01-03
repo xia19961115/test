@@ -177,17 +177,16 @@ export default {
     };
   },
   mounted() {
+    // 假设后端给的权限ID
     const arr = ['1','4','5']
+    // 对路由表进行筛选
     const newRoute = MyRoute.filter(item => arr.indexOf(item.meta.id) > -1 )
     console.log('newRoute', newRoute);
-    // console.log(MyRoute);
-    // console.log(this.$route.name);
-    // console.log(this.$router);
-    this.$router.addRoutes(...MyRoute)
-    // newRoute.forEach(item => {
-    //   this.$router.addRoute(item)
-    // })
-    // console.log(this.$router)
+    // addRoutes 已经被废弃
+    // this.$router.addRoutes(...MyRoute)
+    newRoute.forEach(item => {
+      this.$router.addRoute(item)
+    })
   },
   methods: {
     handleSumbitIcon(item) {
