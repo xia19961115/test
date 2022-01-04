@@ -1,9 +1,10 @@
+import Home from '../views/Home.vue'
 const routes = [
     {
-      path: '/',
+      path: '/home',
       name: 'Home',
       meta:{id:'1'},
-      component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue')
+      component: Home
     },
     {
       path: '/about',
@@ -21,7 +22,14 @@ const routes = [
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       meta:{id:'3'},
-      component: () => import(/* webpackChunkName: "My" */ '../views/My.vue')
+      component: () => import(/* webpackChunkName: "My" */ '../views/My.vue'),
+      children: [
+        {
+          path: 'index1',
+          name: 'MyIndex1',
+          component: () => import(/* webpackChunkName: "My" */ '../views/101.vue'),
+        }
+      ]
     },
     {    
       path: '/file',

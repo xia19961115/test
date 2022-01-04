@@ -37,6 +37,10 @@
     <el-button @click="toggleSelection()">取消选择</el-button> -->
     <el-button type="primary" @click="handleClick(123,2)">主要按钮</el-button>
     <p @click="handleEvent($event)">{{num}}</p>
+    <el-button @click="EventClick">123</el-button>
+    <div>
+      <router-view />
+    </div>
   </div>
   </div>
 </template>
@@ -118,7 +122,10 @@ import {throttle} from '@/common/utils'
       },
       handleClick:throttle(function(){
         this.handleEvent()
-      },2000)
+      },2000),
+      EventClick() {
+        this.$router.push('/my/index1')
+      }
       
     }
   }

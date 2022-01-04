@@ -6,6 +6,10 @@ Vue.use(VueRouter)
 
 const routes = [
     {
+      path: '/',
+      redirect:'/home',
+    },
+    {
     path: '/login',
     name: 'Login',
     // route level code-splitting
@@ -14,14 +18,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
   },
   // 访问不存在的页面 
-  {
-    path: '*',
-    name: 'Login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
-  },
+  // {
+  //   path: '*',
+  //   name: '404',
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () => import(/* webpackChunkName: "about" */ '../views/404.vue')
+  // },
   // {
   //   path: '/',
   //   name: 'Home',
@@ -66,7 +70,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes
 })

@@ -178,7 +178,7 @@ export default {
   },
   mounted() {
     // 假设后端给的权限ID
-    const arr = ['1','4','5']
+    const arr = ['1','3','4','5']
     // 对路由表进行筛选
     const newRoute = MyRoute.filter(item => arr.indexOf(item.meta.id) > -1 )
     console.log('newRoute', newRoute);
@@ -187,6 +187,16 @@ export default {
     newRoute.forEach(item => {
       this.$router.addRoute(item)
     })
+    // 最后在添加 访问不存在的页面 否则刷新一上来就404
+    const a = {
+    path: '*',
+    name: '404',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ './views/404.vue')
+    }
+   this.$router.addRoute(a)
   },
   methods: {
     handleSumbitIcon(item) {
