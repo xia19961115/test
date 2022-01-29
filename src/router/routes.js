@@ -3,13 +3,13 @@ const routes = [
     {
       path: '/home',
       name: 'Home',
-      meta:{id:'1'},
+      meta:{id:'1',name:'首页'},
       component: Home
     },
     {
       path: '/about',
       name: 'About',
-      meta:{id:'2'},
+      meta:{id:'2',name:'关于'},
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -21,7 +21,7 @@ const routes = [
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      meta:{id:'3'},
+      meta:{id:'3',name:'我的'},
       component: () => import(/* webpackChunkName: "My" */ '../views/My.vue'),
       children: [
         {
@@ -34,13 +34,13 @@ const routes = [
     {    
       path: '/file',
       name: 'File',
-      meta:{id:'4'},
+      meta:{id:'4',name:'文件'},
       component: () => import(/* webpackChunkName: "about" */ '../views/File.vue')
     },
     {    
       path: '/test',
       name: 'Test',
-      meta:{id:'5'},
+      meta:{id:'5',name:'测试'},
       component: () => import(/* webpackChunkName: "about" */ '../views/Test.vue') 
     },
     {    

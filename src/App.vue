@@ -34,6 +34,10 @@
         </div>
       </div> -->
     </div>
+    <el-breadcrumb separator="/">
+      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item v-if="$route.meta.name !== '首页'" v-text="$route.meta.name"></el-breadcrumb-item>
+    </el-breadcrumb>
     <router-view />
   </div>
 </template>
