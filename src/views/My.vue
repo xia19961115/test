@@ -38,7 +38,8 @@
     <el-button type="primary" @click="handleClick(123,2)">主要按钮</el-button>
     <p @click="handleEvent($event)">{{num}}</p>
     <el-button @click="EventClick">123</el-button>
-    <Btn2 />
+    <!-- <Btn2 /> -->
+    <Bar />
     <div>
       <router-view />
     </div>
@@ -47,9 +48,10 @@
 </template>
 <script>
 import {throttle} from '@/common/utils'
-import Btn2 from '@/components/btn2.vue'
+// import Btn2 from '@/components/btn2.vue'
+import Bar from '@/components/bar.vue'
   export default {
-    components:{Btn2},
+    components:{ Bar},
     data() {
       return {
         tableData: [{
