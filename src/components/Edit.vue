@@ -47,8 +47,24 @@ export default {
   methods: {
     init () {
       this.editor = new E(this.$refs.editor)
-      this.editor.config.uploadImgServer = "http://127.0.0.1:5000/uploadFile"
+      this.editor.config.showLinkImg = false
+      this.editor.config.uploadImgServer = process.env.VUE_APP_UPLOAD_IMG
+      // this.editor.config.uploadImgHeaders = {
+      //   'ccv-auth': a()
+      // }
       this.editor.config.uploadFileName = 'file'
+      this.editor.config.uploadImgHooks = {
+        before: () => {
+          this.editor.config.uploadImgHeaders = {
+            // 'ccv-auth': a()
+          }
+        },
+        customInsert: function (insertImgFn, result) {
+          insertImgFn(process.env.VUE_APP_IMG + result.object)
+        }
+      }
+      // this.editor.config.uploadImgServer = "http://127.0.0.1:5000/uploadFile"
+      // this.editor.config.uploadFileName = 'file'
       this.setMenus() // 设置菜单
       this.editor.config.onchange = (html) => {
         this.$emit('change', html) // 将内容同步到父组件中
