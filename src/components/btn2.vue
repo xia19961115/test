@@ -11,14 +11,14 @@ export default {
 <style lang="scss" scoped>
 $color: #2194E0;
 
-@keyframes sheen {
-  0% {
-    transform: skewY(-45deg) translateX(0);
-  }
-  100% {
-    transform: skewY(-45deg) translateX(12.5em);
-  }
-}
+// @keyframes sheen {
+//   0% {
+//     transform: skewY(-45deg) translateX(0);
+//   }
+//   100% {
+//     transform: skewY(-45deg) translateX(12.5em);
+//   }
+// }
 
 .wrapper {
   display: block;
@@ -29,12 +29,12 @@ $color: #2194E0;
 }
 .button {
 //   background-color: $color;
-  padding: 0.75em 2em;
+  padding: 0.3em 2em;
   text-align: center;
   text-decoration: none;
   color: $color;
   border: 2px solid $color;
-  font-size: 24px;
+  font-size: 30px;
   display: inline-block;
   border-radius: 0.3em;
   transition: all 0.2s ease-in-out;
