@@ -8,6 +8,11 @@
             v-model="arr" 
             :limitNum="3"
             :listType="'text'"
+            :fileSzie="fileSzie"
+        />
+        <Upload 
+            v-model="arr1"
+            :listType="'picture'"
         />
     </div>
 </template>
@@ -20,7 +25,22 @@ export default {
     components:{First,Second,Upload},
     data(){
         return{
-            arr:[]
+            arr:[{
+              name:'16438817695705g.png',
+              url: "http://127.0.0.1:5000/file/16438817695705g.png"
+            }],
+            arr1:[]
+        }
+    },
+    methods:{
+        fileSzie(param){
+            console.log(param);
+           if (param.size>5500) {
+               this.$message.error('您最大上传数量为');
+               return false
+           } else {
+               return true
+           }
         }
     },
     watch:{

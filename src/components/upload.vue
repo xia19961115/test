@@ -4,11 +4,13 @@
       multiple
       :limit="$attrs.limitNum"
       :list-type="$attrs.listType || 'text'"
+      :accept="$attrs.accept ||'.png,.jpg'"
       class="upload-demo"
-      action="http://127.0.0.1:5000/uploadFile"
+      :action="$attrs.action ||'http://127.0.0.1:5000/uploadFile'"
       :on-exceed="handleExceed"
       :on-success="handleSuccess"
       :on-remove="handleRemove"
+      :before-upload="handleBeforeUpload"
       :file-list="value"
     >
       <el-button size="small" type="text">点击上传</el-button>
@@ -22,6 +24,10 @@ export default {
       value:{
         type:Array,
         default:() =>[]
+      },
+      fileSzie:{
+          type:Function,
+          default: null
       }
   },
   model: {
@@ -47,12 +53,22 @@ export default {
     },
     // 文件被移出
     handleRemove(file) {
-        let list = this.value
-        const index = list.findIndex(item => {
-            return item.uid === file.uid
-        })
-        list.splice(index, 1)
-        this.$emit('change',list)
+        // 防止文件上传前处理 返回false触发Remove
+        if (file && file.status==="success") {
+            let list = this.value
+            const index = list.findIndex(item => {
+                return item.uid === file.uid
+            })
+            list.splice(index, 1)
+            this.$emit('change',list)
+        }
+    },
+    // 文件上传前处理
+    handleBeforeUpload(file) {
+        // 在父组件中传递方法过来并调用 这个方法必须返回true/false
+        if (this.fileSzie) {
+           return this.fileSzie(file)
+        }
     }
   },
 };
