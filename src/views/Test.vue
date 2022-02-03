@@ -4,6 +4,11 @@
         <Model v-model="name" @change='handle' @click="handle1"/>
         <div style="height:800px">1</div>
         <div style="height:600px" id="item">2</div>
+        <div>{{list('789')}}</div>
+        <img v-lazy="anyList1">
+        <img v-lazy="anyList2">
+        <img v-lazy="anyList3">
+        <img v-lazy="anyList4">
     </div>
 </template>
 <script>
@@ -12,7 +17,11 @@ export default {
     components:{Model},
     data(){
         return{
-            name:1
+            name:1,
+            anyList1:require('@/assets/1.jpg'),
+            anyList2:require('@/assets/2.jpg'),
+            anyList3:require('@/assets/3.jpg'),
+            anyList4:require('@/assets/4.jpg')
         }
     },
     mounted(){
@@ -21,6 +30,15 @@ export default {
         this.$nextTick(()=>{
             document.getElementById('item').scrollIntoView()
         })
+    },
+    computed:{
+        list:{
+            get() {
+                return (val) =>{
+                    return val+'66666'
+                }
+            }
+        }
     },
     methods:{
         handle(e){
