@@ -5,7 +5,6 @@
       :limit="$attrs.limitNum"
       :list-type="$attrs.listType || 'text'"
       :accept="$attrs.accept ||'.png,.jpg'"
-      class="upload-demo"
       :action="$attrs.action ||'http://127.0.0.1:5000/uploadFile'"
       :on-exceed="handleExceed"
       :on-success="handleSuccess"
