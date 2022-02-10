@@ -14,6 +14,7 @@
             v-model="arr1"
             :listType="'picture'"
         />
+        <input type="text" v-h1>
     </div>
 </template>
 <script>

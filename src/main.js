@@ -19,6 +19,22 @@ Vue.use(VueLazyLoad,{
   listenEvents:['scroll','wheel','mousewheel','resize','animationend','transitionend','touchmove'], //你想让vue监听的事件
 })
 Vue.component('Edit',()=>import('./components/Edit.vue'))
+// 全局自定义指令
+Vue.directive('h1',{
+  inserted:function(el, binding, vNode) {
+    // el.style.color = 'red'
+    console.log(el) // 获取的节点
+    console.log(binding) // 获取到的值
+    console.log(vNode) // 虚拟节点
+    if (binding.value === 123) {
+      el.style.color = 'red'
+    }
+    el.addEventListener('input',function (e) {
+      console.log(e.target.value);
+      e.target.value =e.target.value.replace(/[^\d]/g,'')
+    })
+  }
+})
 
 new Vue({
   router,
