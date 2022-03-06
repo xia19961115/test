@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import NProgress from 'nprogress'
 // import Home from '../views/Home.vue'
-
+NProgress.configure({showSpinner: false}); // showSpinner：进度环显示隐藏
 Vue.use(VueRouter)
 
 const routes = [
@@ -74,7 +75,14 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+router.beforeEach((to, from, next) => {
+  NProgress.start()
+  next()
+  NProgress.done()
+})
+// router.afterEach(() => {
+//   NProgress.done()
+// })
 // 防止点击相同路径报错
 const VueRouterPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(to) {

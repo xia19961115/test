@@ -6,6 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import VueLazyLoad from 'vue-lazyload'
 import axios from 'axios'
 import * as echarts from 'echarts'
+import 'nprogress/nprogress.css'
 Vue.use(echarts)
 Vue.use(ElementUI);
 Vue.config.productionTip = false
