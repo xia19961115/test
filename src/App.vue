@@ -180,6 +180,12 @@ export default {
       ],
     };
   },
+  watch:{
+    $route(to,from) {
+      console.log(to);
+      console.log(from)
+    }
+  },
   mounted() {
     console.log(process.env);
     // 假设后端给的权限ID
