@@ -189,7 +189,7 @@ export default {
   mounted() {
     console.log(process.env);
     // 假设后端给的权限ID
-    const arr = ['1','3','4','5','7']
+    const arr = ['1','3','4','5','6','7']
     // 对路由表进行筛选
     const newRoute = MyRoute.filter(item => arr.indexOf(item.meta.id) > -1 )
     console.log('newRoute', newRoute);
