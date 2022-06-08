@@ -32,7 +32,10 @@ Vue.directive('h1',{
     }
     el.addEventListener('input',function (e) {
       console.log(e.target.value);
-      e.target.value =e.target.value.replace(/[^\d]/g,'')
+      e.target.value =e.target.value.replace(/[^\d]/g,'').replace(/^0{1,}/g,'')
+      if (e.target.value > 20) {
+        e.target.value =20
+      }
     })
   }
 })

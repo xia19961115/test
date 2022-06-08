@@ -14,7 +14,7 @@
             v-model="arr1"
             :listType="'picture'"
         />
-        <input type="text" v-h1>
+        <el-input type="text" v-model="aaa" v-h1 />
     </div>
 </template>
 <script>
@@ -26,6 +26,7 @@ export default {
     components:{First,Second,Upload},
     data(){
         return{
+            aaa:'',
             arr:[{
               name:'16438817695705g.png',
               url: "http://127.0.0.1:5000/file/16438817695705g.png"
