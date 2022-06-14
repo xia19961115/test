@@ -48,6 +48,12 @@
 </template>
 <script>
 import MyRoute from '../src/router/routes'
+import cookie from 'js-cookie'
+console.log('cookie', cookie);
+cookie.set('token', 'ox8ddssanwf8511d111',{'expires': 30})
+setTimeout(()=> {
+  console.log(cookie.get('token'));
+},5000)
 console.log('route',MyRoute)
 export default {
   name: "Navigation",
