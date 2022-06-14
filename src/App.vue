@@ -38,7 +38,12 @@
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item v-if="$route.meta.name !== '首页'" v-text="$route.meta.name"></el-breadcrumb-item>
     </el-breadcrumb>
-    <router-view />
+    <!-- <keep-alive> -->
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
+      <!-- <router-view /> -->
+    <!-- </keep-alive> -->
   </div>
 </template>
 <script>
@@ -287,5 +292,14 @@ export default {
     color: #ffd04b;
     transition: all .6s;
   }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
