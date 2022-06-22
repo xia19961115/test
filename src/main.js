@@ -20,6 +20,7 @@ Vue.use(VueLazyLoad,{
   listenEvents:['scroll','wheel','mousewheel','resize','animationend','transitionend','touchmove'], //你想让vue监听的事件
 })
 Vue.component('Edit',()=>import('./components/Edit.vue'))
+Vue.component('Bottom',()=>import('@/components/Botton'))
 // 全局自定义指令
 Vue.directive('h1',{
   inserted:function(el, binding, vNode) {

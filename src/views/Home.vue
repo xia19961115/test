@@ -5,6 +5,7 @@
     <div @click="handleADD">父组件的{{price}}</div>
     <div :class="isTrue?'red':''" :style="`fontSize:${size}px`">daaa</div>
     {{arr}}
+    <Bottom />
   </div>
 </template>
 
