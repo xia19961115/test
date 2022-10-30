@@ -15,15 +15,17 @@
             :listType="'picture'"
         />
         <el-input type="text" v-model="aaa" v-h1 />
+        <tree :list="list" v-model="treeArr"/>
     </div>
 </template>
 <script>
 import Second from '@/components/second.vue'
 import First from '@/components/first.vue'
 import Upload from '@/components/upload.vue'
+import tree from '@/components/tree/tree.vue'
 export default {
     name:'News',
-    components:{First,Second,Upload},
+    components:{First,Second,Upload,tree},
     data(){
         return{
             aaa:'',
@@ -31,7 +33,68 @@ export default {
               name:'16438817695705g.png',
               url: "http://127.0.0.1:5000/file/16438817695705g.png"
             }],
-            arr1:[]
+            arr1:[],
+            list: [
+                {
+                    label: 'a1',
+                    value: 1,
+                    children: [
+                        {
+                            label: 'a1-1',
+                            value: 2,
+                            pid: 1,
+                            children: [
+                                {
+                                   label: 'a1-1-1',
+                                   value: 3,
+                                   pid: 2,
+                                   children: []
+                                },
+                                {
+                                   label: 'a1-1-2',
+                                   value: 6,
+                                   pid: 2,
+                                   children: []
+                                }
+                            ]
+
+                        },
+                        {
+                            label: 'a1-2',
+                            value: 7,
+                            pid: 1,
+                            children: [
+                                {
+                                   label: 'a1-2-1',
+                                   value: 8,
+                                   pid: 7,
+                                   children: []
+                                },
+                                {
+                                   label: 'a1-2-2',
+                                   value: 9,
+                                   pid: 7,
+                                   children: []
+                                }
+                            ]
+
+                        }
+                    ]
+                },
+                {
+                    label: 'b1',
+                    value: 4,
+                    children: [
+                        {
+                            label: 'b1-1',
+                            value: 5,
+                            pid: 4,
+                            children: []
+                        }
+                    ]
+                },
+            ],
+            treeArr: []
         }
     },
     methods:{
