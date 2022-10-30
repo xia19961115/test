@@ -88,7 +88,6 @@ export default {
         // 有子级的情况下看子级是否都选择了
         if(item.children && item.children.length>0){
             let list = this.getDataAllChildrenValue(item.children)
-            console.log('em......',this.currentValue);
             list.map(val=>{
                 if(!this.currentValue.includes(val)){
                     checked = false
