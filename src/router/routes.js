@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Auther: xianing
+ * @LastEditors: xianing
+ * @Date: 2022-06-05 19:32:14
+ * @LastEditTime: 2023-02-01 14:24:07
+ */
 import Home from '../views/Home.vue'
 const routes = [
     {
@@ -54,6 +61,12 @@ const routes = [
       name: 'News',
       meta:{id:'7'},
       component: () => import(/* webpackChunkName: "about" */ '../views/News.vue') 
+    },
+    {    
+      path: '/up',
+      name: 'Up',
+      meta:{id:'7'},
+      component: () => import(/* webpackChunkName: "about" */ '../views/Up.vue') 
     }
   ]
   export default routes
