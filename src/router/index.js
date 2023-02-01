@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Auther: xianing
+ * @LastEditors: xianing
+ * @Date: 2022-06-05 19:32:14
+ * @LastEditTime: 2023-02-01 11:27:17
+ */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import NProgress from 'nprogress'
@@ -76,6 +83,9 @@ const router = new VueRouter({
   routes
 })
 router.beforeEach((to, from, next) => {
+  if (from === VueRouter.START_LOCATION) {
+    console.log('初次导航');
+  }
   NProgress.start()
   next()
   NProgress.done()
