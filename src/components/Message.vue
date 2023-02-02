@@ -3,12 +3,12 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2023-02-01 15:22:16
- * @LastEditTime: 2023-02-01 17:06:47
+ * @LastEditTime: 2023-02-02 11:51:51
 -->
 <template>
     <div class="msg">
         <div class="msg-content">
-            {{options.text}}
+            {{options.message}}
         </div>
     </div>
 </template>
@@ -18,7 +18,7 @@ export default {
     data() {
         return {
             options:{
-                text: '签到成功',
+                message: '签到成功',
                 duration: 2000
             }
         }

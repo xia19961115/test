@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2023-02-01 14:23:30
- * @LastEditTime: 2023-02-01 17:20:44
+ * @LastEditTime: 2023-02-02 11:59:34
 -->
 <template>
     <div>
@@ -14,15 +14,16 @@
 </template>
 <script>
 // import Message from '../components/Message.vue'
-import {msg} from './up'
+import msg from './up'
 export default {
     // components: {Message},
     methods:{
         handleClick() {
-            msg({text: '牛逼',duration: 5000})
+            msg('牛逼')
         },
         handleOver() {
-            console.log(msg);
+            // console.log(msg);
+            msg.clear()
         }
     }
 }
