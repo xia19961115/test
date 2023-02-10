@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Auther: xianing
+ * @LastEditors: xianing
+ * @Date: 2022-10-26 15:52:43
+ * @LastEditTime: 2023-02-10 12:19:21
+-->
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
@@ -5,7 +12,9 @@
     <div @click="handleADD">父组件的{{price}}</div>
     <div :class="isTrue?'red':''" :style="`fontSize:${size}px`">daaa</div>
     {{arr}}
-    <Bottom />
+    <Bottom
+      @hook:mounted="handleMounted"
+    />
   </div>
 </template>
 
@@ -22,6 +31,13 @@ export default {
     console.log(process.env.NODE_ENV);
     this.handleTime()
   },
+  mounted() {
+    console.log('first');
+    // 等同于 beforeDestroy生命周期函数
+    this.$once('hook:beforeDestroy', () => {
+      console.log('组件卸载', this)
+    })
+  },
   data(){
     return{
       price:100,
@@ -36,6 +52,10 @@ export default {
   methods:{
     handleADD(){
       this.price+=2
+    },
+    handleMounted() {
+      // 执行顺序 子组件的 mounted > @hook:mounted > 父组件的 mounted
+      console.log('77777');
     },
     handleTime(){
       let num = 0
