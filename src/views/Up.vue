@@ -3,28 +3,36 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2023-02-01 14:23:30
- * @LastEditTime: 2023-02-02 11:59:34
+ * @LastEditTime: 2023-02-10 14:59:44
 -->
 <template>
     <div>
         <el-button type="primary" size="mini" @click="handleClick">按钮</el-button>
         <el-button type="primary" size="mini" @click="handleOver">清除</el-button>
-        <!-- <message></message> -->
+        <div>{{list}}</div>
+        <div>
+            <el-button type="primary" @click="change">改变</el-button>
+        </div>
     </div>
 </template>
 <script>
-// import Message from '../components/Message.vue'
 import msg from './up'
 export default {
-    // components: {Message},
+    data: () =>({
+      list: [1,2,3]  
+    }),
     methods:{
         handleClick() {
             msg('牛逼')
         },
         handleOver() {
-            // console.log(msg);
             msg.clear()
+        },
+        change() {
+            // 等同于 this.$set()
+            this.list[0] = 5
+            this.$forceUpdate()
         }
-    }
+    },
 }
 </script>
