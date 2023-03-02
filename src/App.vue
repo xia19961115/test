@@ -8,7 +8,9 @@
       <router-link to="/echart">Echart</router-link> |
       <router-link to="/test">Test</router-link> |
       <router-link to="/news">News</router-link> |
-      <router-link to="/up">Up</router-link>
+      <router-link to="/up">Up</router-link> |
+      <span @click="handleP(1)">page1</span> |
+      <span @click="handleP(2)">page2</span>
       <!-- <div class="navigation">
         <div class="navigation-title">中央后台系统</div>
         <div class="navigation-item">
@@ -222,6 +224,14 @@ export default {
    this.$router.addRoute(a)
   },
   methods: {
+    handleP(val) {
+      this.$router.push({
+        name: 'Page',
+        query: {
+          a: val
+        }
+      })
+    },
     handleSumbitIcon(item) {
       item.show = !item.show;
     },
