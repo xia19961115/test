@@ -14,6 +14,7 @@
             <el-button type="primary" @click="change">改变</el-button>
         </div>
         <view-picture :src="pic" />
+        <view-picture :src="pic1" />
     </div>
 </template>
 <script>
@@ -23,7 +24,8 @@ export default {
     components:{ViewPicture},
     data: () =>({
       list: [1,2,3],
-      pic: require('../assets/1.jpg')
+      pic: require('../assets/1.jpg'),
+      pic1: require('../assets/2.jpg')
     }),
     methods:{
         handleClick() {

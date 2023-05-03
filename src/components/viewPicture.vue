@@ -30,6 +30,7 @@
     </div>
 </template>
 <script>
+import {debounce} from '../views/util'
 export default {
     name: 'ViewPicture',
     props:{
@@ -58,12 +59,13 @@ export default {
             // First与Last两个状态之间的缩放比例
             scaleValue: 1,
             rectInfo: null,
+            // 预览图片状态
             previewStatus: 0,
         }
     },
     methods:{
         preview(status,e) {
-            console.log(status,e.target);
+            console.log(this.previewStatus);
             this.previewVisibleStatus = status
             if (this.previewVisibleStatus === 1) {
                 this.currentPreviewEle = e.target
@@ -77,7 +79,9 @@ export default {
                 this.previewStatus = 1
             }
         },
+        // 调用3次
         updatePreviewStatus() {
+            console.log('----');
             if (this.previewStatus === 1) {
                 if (this.previewVisibleStatus === 1) {
                     this.$nextTick(() => {
@@ -96,20 +100,48 @@ export default {
                 }, 0)
             }
         },
+        // 动画结束
         transEnd () {
-            console.log('-----');
             if (this.previewVisibleStatus === 2 && this.previewVisibleStatus !== 3) {
                 this.previewVisibleStatus = 3
                 this.previewStatus= 0
             }
+        },
+        // 尺寸发生变化的时候
+        resizeChange() {
+            console.log('-----');
+            if (this.previewVisibleStatus === 1 || this.previewVisibleStatus === 2) {
+                this.$nextTick(() => {
+                    const lastRectInfo = this.$refs.pic.getBoundingClientRect()
+                    this.$set(this.previewLastRect, 0, lastRectInfo.left)
+                    this.$set(this.previewLastRect, 1, lastRectInfo.top)
+                    this.scaleValue = this.rectInfo.width / lastRectInfo.width
+                })
+            }
         }
+        // resizeChange:debounce(function(){
+        //     console.log('尺寸变化了');
+        //     if (this.previewVisibleStatus === 1 || this.previewVisibleStatus === 2) {
+        //         this.$nextTick(() => {
+        //             const lastRectInfo = this.$refs.pic.getBoundingClientRect()
+        //             this.$set(this.previewLastRect, 0, lastRectInfo.left)
+        //             this.$set(this.previewLastRect, 1, lastRectInfo.top)
+        //             this.scaleValue = this.rectInfo.width / lastRectInfo.width
+        //         })
+        //     }
+        // }, 500)
+    },
+    mounted() {
+        window.addEventListener('resize', this.resizeChange)
     },
     updated() {
         this.updatePreviewStatus()
     },
     destroyed() {
+        console.log('--卸载');
         this.currentPreviewEle = null
         this.rectInfo = null
+        window.removeEventListener('resize', this.resizeChange)
     }
 }
 </script>
