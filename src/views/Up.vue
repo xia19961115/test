@@ -13,13 +13,17 @@
         <div>
             <el-button type="primary" @click="change">改变</el-button>
         </div>
+        <view-picture :src="pic" />
     </div>
 </template>
 <script>
+import ViewPicture from '../components/viewPicture.vue'
 import msg from './up'
 export default {
+    components:{ViewPicture},
     data: () =>({
-      list: [1,2,3]  
+      list: [1,2,3],
+      pic: require('../assets/1.jpg')
     }),
     methods:{
         handleClick() {
