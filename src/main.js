@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Auther: xianing
+ * @LastEditors: xianing
+ * @Date: 2022-10-26 15:52:43
+ * @LastEditTime: 2023-05-04 14:18:46
+ */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -39,6 +46,19 @@ Vue.directive('h1',{
       }
     })
   }
+})
+// 自动引入指令
+// 自定义指令
+Vue.use((Vue) => {
+  ((requireContext) => {
+    const arr = requireContext.keys().map(requireContext);
+    (arr || []).forEach((directive) => {
+      directive = directive.__esModule && directive.default ? directive.default : directive
+      Object.keys(directive).forEach((key) => {
+        Vue.directive(key, directive[key])
+      })
+    })
+  })(require.context('./directive', false, /^\.\/.*\.js$/))
 })
 
 new Vue({
