@@ -9,6 +9,7 @@
       <router-link to="/test">Test</router-link> |
       <router-link to="/news">News</router-link> |
       <router-link to="/up">Up</router-link> |
+      <router-link to="/silder">silder</router-link> |
       <span @click="handleP(1)">page1</span> |
       <span @click="handleP(2)">page2</span>
       <!-- <div class="navigation">

@@ -73,6 +73,12 @@ const routes = [
       name: 'Page',
       meta:{id:'7'},
       component: () => import(/* webpackChunkName: "about" */ '../views/Page.vue') 
+    },
+    {    
+      path: '/silder',
+      name: 'Silder',
+      meta:{id:'7'},
+      component: () => import(/* webpackChunkName: "about" */ '../views/silder.vue') 
     }
   ]
   export default routes
