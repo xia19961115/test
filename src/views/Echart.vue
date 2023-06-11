@@ -98,7 +98,7 @@ export default {
       this.myChart = echarts.init(this.$refs.main);
       this.myChart.setOption(this.option);
       window.addEventListener("resize", function () {
-        this.myChart.resize();
+        // this.myChart.resize();
       });
     },
   },

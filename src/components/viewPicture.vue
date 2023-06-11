@@ -30,7 +30,7 @@
     </div>
 </template>
 <script>
-import {debounce} from '../views/util'
+// import {debounce} from '../views/util'
 export default {
     name: 'ViewPicture',
     props:{
@@ -65,7 +65,7 @@ export default {
     },
     methods:{
         preview(status,e) {
-            console.log(this.previewStatus);
+            // console.log(this.previewStatus);
             this.previewVisibleStatus = status
             if (this.previewVisibleStatus === 1) {
                 this.currentPreviewEle = e.target
@@ -73,7 +73,7 @@ export default {
                 this.rectInfo = rectInfo
                 this.$set(this.previewFirstRect, 0, rectInfo.left)
                 this.$set(this.previewFirstRect, 1, rectInfo.top)
-                console.log(this.previewFirstRect);
+                // console.log(this.previewFirstRect);
                 this.previewStatus = 1
             } else {
                 this.previewStatus = 1
@@ -81,7 +81,7 @@ export default {
         },
         // 调用3次
         updatePreviewStatus() {
-            console.log('----');
+            // console.log('----');
             if (this.previewStatus === 1) {
                 if (this.previewVisibleStatus === 1) {
                     this.$nextTick(() => {
@@ -89,7 +89,7 @@ export default {
                         this.$set(this.previewLastRect, 0, lastRectInfo.left)
                         this.$set(this.previewLastRect, 1, lastRectInfo.top)
                         this.scaleValue = this.rectInfo.width / lastRectInfo.width
-                        console.log(this.previewLastRect);
+                        // console.log(this.previewLastRect);
                     })
                 }
                 this.previewStatus = 2
@@ -109,7 +109,7 @@ export default {
         },
         // 尺寸发生变化的时候
         resizeChange() {
-            console.log('-----');
+            // console.log('-----');
             if (this.previewVisibleStatus === 1 || this.previewVisibleStatus === 2) {
                 this.$nextTick(() => {
                     const lastRectInfo = this.$refs.pic.getBoundingClientRect()
@@ -138,7 +138,7 @@ export default {
         this.updatePreviewStatus()
     },
     destroyed() {
-        console.log('--卸载');
+        // console.log('--卸载');
         this.currentPreviewEle = null
         this.rectInfo = null
         window.removeEventListener('resize', this.resizeChange)

@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2023-02-01 14:23:30
- * @LastEditTime: 2023-02-10 14:59:44
+ * @LastEditTime: 2023-05-04 14:51:37
 -->
 <template>
     <div>
@@ -13,7 +13,7 @@
         <div>
             <el-button type="primary" @click="change">改变</el-button>
         </div>
-        <view-picture :src="pic" />
+        <view-picture :src="pic" v-resize="sizeChange"/>
         <view-picture :src="pic1" />
     </div>
 </template>
@@ -38,6 +38,9 @@ export default {
             // 等同于 this.$set()
             this.list[0] = 5
             this.$forceUpdate()
+        },
+        sizeChange(val) {
+            console.log(val);
         }
     },
 }
