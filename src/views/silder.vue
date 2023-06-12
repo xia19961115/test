@@ -28,6 +28,7 @@ export default {
         height: 500px;
         margin: 0 auto;
         overflow: hidden scroll;
+        position: relative;
     }
     .box{
         width: 70%;
