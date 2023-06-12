@@ -1,7 +1,16 @@
+<!--
+ * @Description: 
+ * @Auther: xianing
+ * @LastEditors: xianing
+ * @Date: 2023-06-12 10:23:57
+ * @LastEditTime: 2023-06-12 10:42:44
+-->
 <template>
     <div>
-        <div class="box" v-silder:3000 v-for="item in 10" :key="item">
-            {{item}}
+        <div id="c">
+            <div class="box" v-silder:3000 v-for="item in 10" :key="item">
+                {{item}}
+            </div>
         </div>
     </div>
 </template>
@@ -14,6 +23,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+    #c{
+        width: 200px;
+        height: 500px;
+        margin: 0 auto;
+        overflow: hidden scroll;
+    }
     .box{
         width: 70%;
         height: 200px;

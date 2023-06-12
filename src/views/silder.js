@@ -38,7 +38,7 @@ export default {
         ob.observe(el)
     },
     unbind(el) {
-        el.getAnimations().forEach(item => item.cancel())
+        // el.getAnimations().forEach(item => item.cancel())
         ob.unobserve(el)
     }
 }
