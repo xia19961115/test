@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2022-06-05 19:32:14
- * @LastEditTime: 2023-03-02 11:10:33
+ * @LastEditTime: 2023-06-29 00:33:34
  */
 import Home from '../views/Home.vue'
 const routes = [
@@ -79,6 +79,12 @@ const routes = [
       name: 'Silder',
       meta:{id:'7'},
       component: () => import(/* webpackChunkName: "about" */ '../views/silder.vue') 
+    },
+    {    
+      path: '/waterFull',
+      name: 'WaterFull',
+      meta:{id:'7'},
+      component: () => import(/* webpackChunkName: "about" */ '../views/waterFull.vue') 
     }
   ]
   export default routes

@@ -10,6 +10,7 @@
       <router-link to="/news">News</router-link> |
       <router-link to="/up">Up</router-link> |
       <router-link to="/silder">silder</router-link> |
+      <router-link to="/waterFull">waterFull</router-link> |
       <span @click="handleP(1)">page1</span> |
       <span @click="handleP(2)">page2</span>
       <!-- <div class="navigation">
