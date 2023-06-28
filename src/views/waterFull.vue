@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2023-06-29 00:32:49
- * @LastEditTime: 2023-06-29 02:50:31
+ * @LastEditTime: 2023-06-29 02:56:56
 -->
 <template>
   <div class="waterFull">
@@ -33,7 +33,6 @@ export default {
   methods: {
     // 获取水平方向上的信息
     getHorizontalInfo() {
-      //   this.$nextTick(() => {
       let obj = {};
       obj.containerWidth = Math.floor(
         this.$refs.waterFullContainer.clientWidth
@@ -46,9 +45,6 @@ export default {
       obj.gap =
         (obj.containerWidth - obj.number * this.itemWidth) / (obj.number - 1);
       return obj;
-      //   });
-      //   console.log(obj);
-      //   return obj;
     },
     // 设置图片位置
     setImgPosition() {
