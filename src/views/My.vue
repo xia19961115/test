@@ -44,6 +44,7 @@
       />
       <el-button @click="EventClick">123</el-button>
       <!-- <Btn2 /> -->
+      <F @submit="handleSub"/>
       <Bar />
       <div>
         <router-view />
@@ -56,8 +57,9 @@ import { throttle } from "@/common/utils";
 // import Btn2 from '@/components/btn2.vue'
 import Bar from "@/components/bar.vue";
 import pager from "@/baseComponents/pager";
+import F from './emitMore/f.vue'
 export default {
-  components: { Bar, pager },
+  components: { Bar, pager, F },
   data() {
     return {
       total: 300,
@@ -104,6 +106,10 @@ export default {
     };
   },
   methods: {
+    handleSub(callback) {
+      console.log('sub');
+      callback && callback()
+    },
     handlePageChange(newPage) {
       this.current = newPage;
       console.log("加载当前页数据");
