@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2023-06-29 00:32:49
- * @LastEditTime: 2023-06-29 02:56:56
+ * @LastEditTime: 2023-08-05 02:07:09
 -->
 <template>
   <div class="waterFull">
@@ -14,7 +14,7 @@
         :key="index"
       >
         <img :src="item" @load="imgLoad" />
-        <div>12311</div>
+        <div>123111</div>
       </div>
     </div>
   </div>
