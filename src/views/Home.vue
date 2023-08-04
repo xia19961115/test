@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2022-10-26 15:52:43
- * @LastEditTime: 2023-02-10 12:19:21
+ * @LastEditTime: 2023-08-05 00:57:17
 -->
 <template>
   <div class="home">
@@ -33,7 +33,7 @@ export default {
   },
   mounted() {
     console.log('first');
-    // 等同于 beforeDestroy生命周期函数
+    // 等同于 beforeDestroy生命周期函数-
     this.$once('hook:beforeDestroy', () => {
       console.log('组件卸载', this)
     })
