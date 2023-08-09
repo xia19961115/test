@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2022-06-05 19:32:14
- * @LastEditTime: 2023-06-29 00:33:34
+ * @LastEditTime: 2023-08-09 15:51:17
  */
 import Home from '../views/Home.vue'
 const routes = [
@@ -85,6 +85,12 @@ const routes = [
       name: 'WaterFull',
       meta:{id:'7'},
       component: () => import(/* webpackChunkName: "about" */ '../views/waterFull.vue') 
+    },
+    {    
+      path: '/scrollView',
+      name: 'ScrollView',
+      meta:{id:'7'},
+      component: () => import(/* webpackChunkName: "about" */ '../views/scrollView.vue') 
     }
   ]
   export default routes
