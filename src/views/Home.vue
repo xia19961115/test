@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2022-10-26 15:52:43
- * @LastEditTime: 2023-08-05 00:57:17
+ * @LastEditTime: 2023-09-03 11:09:00
 -->
 <template>
   <div class="home">
@@ -21,6 +21,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import SparkMD5 from 'spark-md5';
 
 export default {
   name: 'Home',
@@ -33,6 +34,7 @@ export default {
   },
   mounted() {
     console.log('first');
+    console.log(SparkMD5);
     // 等同于 beforeDestroy生命周期函数-
     this.$once('hook:beforeDestroy', () => {
       console.log('组件卸载', this)
