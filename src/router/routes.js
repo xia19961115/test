@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2022-06-05 19:32:14
- * @LastEditTime: 2023-08-09 15:51:17
+ * @LastEditTime: 2023-09-23 20:28:36
  */
 import Home from '../views/Home.vue'
 const routes = [
@@ -91,6 +91,12 @@ const routes = [
       name: 'ScrollView',
       meta:{id:'7'},
       component: () => import(/* webpackChunkName: "about" */ '../views/scrollView.vue') 
+    },
+    {    
+      path: '/dialog',
+      name: 'Dialog',
+      meta:{id:'7'},
+      component: () => import(/* webpackChunkName: "about" */ '../views/dialog.vue') 
     }
   ]
   export default routes
