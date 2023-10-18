@@ -43,9 +43,11 @@
     </div>
     <el-breadcrumb separator="/">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item v-if="$route.meta.name !== '首页'" v-text="$route.meta.name"></el-breadcrumb-item>
+      <el-breadcrumb-item v-if="$route.meta.name !== '首页'">{{$route.meta.name}}</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- <keep-alive> -->
+      <!-- name 定义类名.fade-xxx 开头 默认v-xxx开头 -->
+      <!-- mode 默认in-out 先进后出(缺点 两个节点同时存在) / out-in 先出 后进 -->
       <transition name="fade" mode="out-in">
         <router-view />
       </transition>
@@ -317,11 +319,18 @@ export default {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: 0.5s ease;
+}
+// .fade-enter {
+//   transform: translateX(100%);
+// }
+ .fade-enter, .fade-leave-to {
+  opacity: 0;
+  // transform: translateX(-100%);
+}
+.fade-enter-to, .fade-leave{
+  opacity: 1;
+  // transform: translateX(0);
 }
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
 </style>
