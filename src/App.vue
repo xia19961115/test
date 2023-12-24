@@ -47,6 +47,7 @@
     </el-breadcrumb>
     <!-- <keep-alive> -->
       <!-- name 定义类名.fade-xxx 开头 默认v-xxx开头 -->
+      <!-- appear 首次渲染就使用动画 -->
       <!-- mode 默认in-out 先进后出(缺点 两个节点同时存在) / out-in 先出 后进 -->
       <transition name="fade" mode="out-in">
         <router-view />

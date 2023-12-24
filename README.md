@@ -9,12 +9,12 @@
 
 ### 进入的情况
 
-v-enter →→→   v-enter-to
-→    v-enter-active    →
+v-enter(进入的状态)  →→→   v-enter-to(active 结束后的状态)
+→    v-enter-active(进入后 到结束的时间 )    →
 
 初始状态 (opacity: 0)    →→→  结束状态 (opacity: 1)
 
-第一次渲染的时候会给元素添加 enter 类名 
+第一次渲染的时候会给元素添加 enter 类名
 到达下一渲染帧的时候 移除 enter 类名
 添加 enter-active 和 enter-to 类名
 
