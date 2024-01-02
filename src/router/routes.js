@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2022-06-05 19:32:14
- * @LastEditTime: 2023-09-23 20:28:36
+ * @LastEditTime: 2024-01-02 21:12:31
  */
 import Home from '../views/Home.vue'
 const routes = [
@@ -97,6 +97,12 @@ const routes = [
       name: 'Dialog',
       meta:{id:'7'},
       component: () => import(/* webpackChunkName: "about" */ '../views/dialog.vue') 
+    },
+    {    
+      path: '/calendar',
+      name: 'Calendar',
+      meta:{id:'7'},
+      component: () => import(/* webpackChunkName: "about" */ '../views/Calendar.vue') 
     }
   ]
   export default routes

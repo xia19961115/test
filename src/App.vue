@@ -13,6 +13,7 @@
       <router-link to="/waterFull">waterFull</router-link> |
       <router-link to="/scrollView">scrollView</router-link> |
       <router-link to="/dialog">dialog</router-link> |
+      <router-link to="/calendar">Calendar</router-link> |
       <span @click="handleP(1)">page1</span> |
       <span @click="handleP(2)">page2</span>
       <!-- <div class="navigation">
