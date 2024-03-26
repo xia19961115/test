@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2022-06-05 19:32:14
- * @LastEditTime: 2024-01-02 21:12:31
+ * @LastEditTime: 2024-03-27 02:13:19
  */
 import Home from '../views/Home.vue'
 const routes = [
@@ -103,6 +103,12 @@ const routes = [
       name: 'Calendar',
       meta:{id:'7'},
       component: () => import(/* webpackChunkName: "about" */ '../views/Calendar.vue') 
+    },
+    {    
+      path: '/pagination',
+      name: 'Pagination',
+      meta:{id:'7'},
+      component: () => import(/* webpackChunkName: "about" */ '../views/Pagination.vue') 
     }
   ]
   export default routes
