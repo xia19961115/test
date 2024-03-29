@@ -80,7 +80,7 @@ export default {
                   valueList.push(item[this.listKey])
               }
           })
-          console.log(',', valueList);
+          // console.log(',', valueList);
           return valueList
       },
       // 递归查询每个数据下是否有子级没被选中 如果没被选中则过滤掉这个数据

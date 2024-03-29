@@ -3,7 +3,7 @@
  * @Auther: xianing
  * @LastEditors: xianing
  * @Date: 2022-06-05 19:32:14
- * @LastEditTime: 2024-03-27 02:13:19
+ * @LastEditTime: 2024-03-28 23:28:35
  */
 import Home from '../views/Home.vue'
 const routes = [
@@ -109,6 +109,12 @@ const routes = [
       name: 'Pagination',
       meta:{id:'7'},
       component: () => import(/* webpackChunkName: "about" */ '../views/Pagination.vue') 
+    },
+    {    
+      path: '/tree',
+      name: 'Tree',
+      meta:{id:'7'},
+      component: () => import(/* webpackChunkName: "about" */ '../views/Tree.vue') 
     }
   ]
   export default routes
